@@ -8,6 +8,12 @@ To start your application in the dev profile, simply run:
     ./gradlew
 
 
+If you have some problems to run the project, try installing Java and Gradle on your local and them run the next on project's path:
+
+    gradle build    (to download dependecies)
+    gradle bootRun  (to start the app on your localhost)
+
+    
 For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
 
 ### Using angular-cli
