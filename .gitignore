@@ -12,6 +12,11 @@
 
 # Package Files #
 *.jar
+/.gradle/*
+/.build/*
+/.idea/*
+/node_modules/*
+/out/*
 !/gradle/wrapper/gradle-wrapper.jar
 *.war
 *.nar

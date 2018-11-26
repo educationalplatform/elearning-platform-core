@@ -1,14 +1,13 @@
 package org.educationplatform.application.service.dto;
 
 import org.educationplatform.application.config.Constants;
-
 import org.educationplatform.application.domain.Authority;
 import org.educationplatform.application.domain.User;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-
-import javax.validation.constraints.*;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.time.Instant;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -18,7 +17,7 @@ import java.util.stream.Collectors;
  */
 public class UserDTO {
 
-    private Long id;
+    private String id;
 
     @NotBlank
     @Pattern(regexp = Constants.LOGIN_REGEX)
@@ -71,15 +70,15 @@ public class UserDTO {
         this.lastModifiedBy = user.getLastModifiedBy();
         this.lastModifiedDate = user.getLastModifiedDate();
         this.authorities = user.getAuthorities().stream()
-            .map(Authority::getName)
-            .collect(Collectors.toSet());
+                .map(Authority::getName)
+                .collect(Collectors.toSet());
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -182,18 +181,18 @@ public class UserDTO {
     @Override
     public String toString() {
         return "UserDTO{" +
-            "login='" + login + '\'' +
-            ", firstName='" + firstName + '\'' +
-            ", lastName='" + lastName + '\'' +
-            ", email='" + email + '\'' +
-            ", imageUrl='" + imageUrl + '\'' +
-            ", activated=" + activated +
-            ", langKey='" + langKey + '\'' +
-            ", createdBy=" + createdBy +
-            ", createdDate=" + createdDate +
-            ", lastModifiedBy='" + lastModifiedBy + '\'' +
-            ", lastModifiedDate=" + lastModifiedDate +
-            ", authorities=" + authorities +
-            "}";
+                "login='" + login + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", activated=" + activated +
+                ", langKey='" + langKey + '\'' +
+                ", createdBy=" + createdBy +
+                ", createdDate=" + createdDate +
+                ", lastModifiedBy='" + lastModifiedBy + '\'' +
+                ", lastModifiedDate=" + lastModifiedDate +
+                ", authorities=" + authorities +
+                "}";
     }
 }
